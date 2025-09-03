@@ -1,0 +1,47 @@
+{
+  "name": "md-razib-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for MD Razib - Flutter Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --host=localhost",
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss -o assets/css/style.min.css assets/css/style.css assets/css/neumorphism.css assets/css/responsive.css",
+    "minify-js": "uglifyjs assets/js/main.js assets/js/animations.js -o assets/js/script.min.js",
+    "optimize-images": "imagemin assets/images/* --out-dir=assets/images/optimized",
+    "lint": "eslint assets/js/*.js",
+    "format": "prettier --write assets/css/*.css assets/js/*.js",
+    "deploy": "gh-pages -d .",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "flutter-developer",
+    "mobile-development",
+    "neumorphism",
+    "responsive-design",
+    "personal-website"
+  ],
+  "author": "MD Razib <mdrazib.cse@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/the-razib/personal-portfolio"
+  },
+  "homepage": "https://the-razib.github.io/personal-portfolio",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "eslint": "^8.57.0",
+    "gh-pages": "^6.1.1",
+    "imagemin": "^8.0.1",
+    "imagemin-webp": "^8.0.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.2.5",
+    "uglify-js": "^3.17.4"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

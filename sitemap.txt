@@ -1,0 +1,13 @@
+# Sitemap for MD Razib Portfolio
+
+# Main pages
+https://the-razib.github.io/personal-portfolio/
+https://the-razib.github.io/personal-portfolio/privacy-policy.html
+
+# Sections (anchors)
+https://the-razib.github.io/personal-portfolio/#home
+https://the-razib.github.io/personal-portfolio/#about
+https://the-razib.github.io/personal-portfolio/#skills
+https://the-razib.github.io/personal-portfolio/#experience
+https://the-razib.github.io/personal-portfolio/#projects
+https://the-razib.github.io/personal-portfolio/#contact

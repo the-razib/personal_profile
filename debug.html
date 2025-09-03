@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Debug - MD Razib Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #e6f2ff;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 60px 0;
+      margin: 20px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #4a90e2;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #5a6c7d;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+      margin-top: 30px;
+    }
+
+    .about-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-card h3 {
+      color: #4a90e2;
+      margin-bottom: 20px;
+    }
+
+    .about-stats {
+      display: grid;
+      gap: 20px;
+    }
+
+    .stat-item {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4a90e2;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      color: #5a6c7d;
+      font-size: 0.9rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .skill-category {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-icon {
+      width: 80px;
+      height: 80px;
+      background: #4a90e2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .skill-category h3 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .skill-category ul {
+      list-style: none;
+      text-align: left;
+    }
+
+    .skill-category li {
+      padding: 8px 0;
+      color: #5a6c7d;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .skill-category li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #4a90e2;
+      font-weight: bold;
+    }
+
+    .timeline-item {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #4a90e2;
+      border-radius: 2px;
+    }
+
+    .timeline-date {
+      color: #4a90e2;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .timeline-content h3 {
+      color: #2c3e50;
+      margin-bottom: 5px;
+      font-size: 1.3rem;
+    }
+
+    .timeline-content h4 {
+      color: #5a6c7d;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .timeline-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .timeline-content li {
+      padding: 5px 0;
+      color: #5a6c7d;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-content li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #4a90e2;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">Get to know more about my background and expertise</p>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <div class="about-card">
+            <h3>Professional Summary</h3>
+            <p>
+              Flutter developer with published apps on Google Play and App Store.
+              Skilled in Flutter, Dart, Firebase, RESTful APIs, and state management with GetX.
+              Built clean, user-friendly mobile apps with real-time data, offline support,
+              and secure authentication. Passionate about writing clean code and delivering
+              smooth cross-platform experiences.
+            </p>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Published App</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">250+</div>
+            <div class="stat-label">Package Downloads</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">3.82</div>
+            <div class="stat-label">University CGPA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">Technologies I work with</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-icon">📱</div>
+          <h3>Mobile Development</h3>
+          <ul>
+            <li>Flutter & Dart</li>
+            <li>Cross-platform Development</li>
+            <li>Native Android (Java)</li>
+            <li>State Management (GetX)</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-icon">🔧</div>
+          <h3>Backend & APIs</h3>
+          <ul>
+            <li>RESTful APIs</li>
+            <li>Firebase Suite</li>
+            <li>JWT Authentication</li>
+            <li>Cloud Messaging (FCM)</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-icon">💾</div>
+          <h3>Storage & Database</h3>
+          <ul>
+            <li>Firestore</li>
+            <li>Shared Preferences</li>
+            <li>Hive Database</li>
+            <li>Secure Storage</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <div class="skill-icon">⚙️</div>
+          <h3>Tools & Services</h3>
+          <ul>
+            <li>Git & GitHub</li>
+            <li>Google Maps SDK</li>
+            <li>Stripe Payments</li>
+            <li>App Store Deployment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">My professional journey</p>
+      </div>
+      <div class="experience-timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">April 2025 - Present</div>
+          <div class="timeline-content">
+            <h3>Flutter Developer</h3>
+            <h4>Softvence Agency | Mohakhali, Dhaka</h4>
+            <ul>
+              <li>Contributed to 5+ cross-platform mobile apps using Flutter & Dart</li>
+              <li>1 app published on Google Play & Apple App Store; others in development</li>
+              <li>Collaborated with designers for intuitive UI/UX</li>
+              <li>Integrated RESTful APIs for seamless data communication</li>
+              <li>Maintained scalable code with Git version control</li>
+              <li>Conducted debugging & troubleshooting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

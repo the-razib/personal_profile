@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Block access to source files and development directories
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /.gitignore
+Disallow: /README.md
+Disallow: /LICENSE
+
+# Allow access to images and icons
+Allow: /assets/images/
+Allow: /assets/icons/
+
+# Sitemap location
+Sitemap: https://the-razib.github.io/personal-portfolio/sitemap.txt

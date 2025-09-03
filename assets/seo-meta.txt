@@ -1,0 +1,92 @@
+/* SEO and Meta Tags Configuration */
+
+/* Add this to the <head> section of index.html for better SEO */
+
+/* 
+<meta name="description" content="MD Razib - Professional Flutter Developer specializing in cross-platform mobile app development. Experienced in Dart, Firebase, REST APIs, and modern mobile technologies.">
+<meta name="keywords" content="Flutter Developer, Mobile App Developer, Dart Programming, Firebase, Cross-platform Development, Android, iOS, REST API, GetX, Mobile Development">
+<meta name="author" content="MD Razib">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://the-razib.github.io/personal-portfolio/">
+<meta property="og:title" content="MD Razib - Flutter Developer Portfolio">
+<meta property="og:description" content="Professional Flutter Developer with expertise in cross-platform mobile app development. View my projects and get in touch for collaboration.">
+<meta property="og:image" content="https://the-razib.github.io/personal-portfolio/assets/images/og-image.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://the-razib.github.io/personal-portfolio/">
+<meta property="twitter:title" content="MD Razib - Flutter Developer Portfolio">
+<meta property="twitter:description" content="Professional Flutter Developer with expertise in cross-platform mobile app development. View my projects and get in touch for collaboration.">
+<meta property="twitter:image" content="https://the-razib.github.io/personal-portfolio/assets/images/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+<link rel="manifest" href="assets/icons/site.webmanifest">
+
+<!-- Theme Color -->
+<meta name="theme-color" content="#4a90e2">
+<meta name="msapplication-TileColor" content="#4a90e2">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://the-razib.github.io/personal-portfolio/">
+
+<!-- Language -->
+<meta http-equiv="content-language" content="en">
+
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "MD Razib",
+  "jobTitle": "Flutter Developer",
+  "description": "Professional Flutter Developer with expertise in cross-platform mobile app development",
+  "url": "https://the-razib.github.io/personal-portfolio/",
+  "email": "mdrazib.cse@gmail.com",
+  "telephone": "+8801644556056",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dhaka",
+    "addressCountry": "Bangladesh"
+  },
+  "sameAs": [
+    "https://github.com/the-razib",
+    "https://linkedin.com/in/md-razib",
+    "https://softvence.agency/"
+  ],
+  "knowsAbout": [
+    "Flutter Development",
+    "Dart Programming",
+    "Mobile App Development",
+    "Firebase",
+    "REST APIs",
+    "Cross-platform Development"
+  ],
+  "alumniOf": "Daffodil International University",
+  "workLocation": {
+    "@type": "Place",
+    "name": "Softvence Agency",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Mohakhali, Dhaka",
+      "addressCountry": "Bangladesh"
+    }
+  }
+}
+</script>
+*/

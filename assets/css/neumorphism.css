@@ -1,0 +1,299 @@
+/* ====================================
+   NEUMORPHISM DESIGN SYSTEM
+   ==================================== */
+
+:root {
+  /* Neumorphism Colors */
+  --primary-bg: #e6f2ff;
+  --secondary-bg: #f0f7ff;
+  --surface-bg: #ebf4ff;
+  --accent-color: #4a90e2;
+  --accent-light: #66a3ff;
+  --accent-dark: #3d7bc6;
+
+  /* Text Colors */
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #8fa0b3;
+  --text-light: #ffffff;
+
+  /* Shadows */
+  --shadow-light: #ffffff;
+  --shadow-dark: #c8d9f0;
+  --shadow-inset-light: #ffffff;
+  --shadow-inset-dark: #d1e0f0;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+  --radius-xl: 25px;
+  --radius-round: 50%;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Base Neumorphism Effects */
+.neumorphism {
+  background: var(--primary-bg);
+  border-radius: var(--radius-md);
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  transition: all var(--transition-medium);
+}
+
+.neumorphism:hover {
+  box-shadow:
+    12px 12px 24px var(--shadow-dark),
+    -12px -12px 24px var(--shadow-light);
+  transform: translateY(-2px);
+}
+
+.neumorphism-inset {
+  background: var(--primary-bg);
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+}
+
+.neumorphism-pressed {
+  background: var(--primary-bg);
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 6px 6px 12px var(--shadow-inset-dark),
+    inset -6px -6px 12px var(--shadow-inset-light);
+}
+
+/* Button Neumorphism */
+.neumorphism-button {
+  background: var(--primary-bg);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow:
+    6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.neumorphism-button:hover {
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.neumorphism-button:active {
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+  transform: scale(0.98);
+}
+
+/* Card Neumorphism */
+.neumorphism-card {
+  background: var(--surface-bg);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    10px 10px 20px var(--shadow-dark),
+    -10px -10px 20px var(--shadow-light);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-medium);
+}
+
+.neumorphism-card:hover {
+  box-shadow:
+    15px 15px 30px var(--shadow-dark),
+    -15px -15px 30px var(--shadow-light);
+  transform: translateY(-5px);
+}
+
+/* Input Neumorphism */
+.neumorphism-input {
+  background: var(--primary-bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+  transition: all var(--transition-fast);
+}
+
+.neumorphism-input:focus {
+  outline: none;
+  box-shadow:
+    inset 6px 6px 12px var(--shadow-inset-dark),
+    inset -6px -6px 12px var(--shadow-inset-light),
+    0 0 0 2px var(--accent-color);
+}
+
+/* Icon Neumorphism */
+.neumorphism-icon {
+  background: var(--primary-bg);
+  border-radius: var(--radius-round);
+  box-shadow:
+    6px 6px 12px var(--shadow-dark),
+    -6px -6px 12px var(--shadow-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-medium);
+}
+
+.neumorphism-icon:hover {
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  transform: scale(1.05);
+}
+
+/* Floating Neumorphism */
+.neumorphism-floating {
+  background: var(--primary-bg);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 10px 30px rgba(200, 217, 240, 0.5),
+    0 1px 8px rgba(200, 217, 240, 0.3);
+  transition: all var(--transition-medium);
+}
+
+.neumorphism-floating:hover {
+  box-shadow:
+    0 15px 40px rgba(200, 217, 240, 0.6),
+    0 5px 15px rgba(200, 217, 240, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Progress Bar Neumorphism */
+.neumorphism-progress {
+  background: var(--primary-bg);
+  border-radius: var(--radius-xl);
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+  overflow: hidden;
+}
+
+.neumorphism-progress-fill {
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  box-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width var(--transition-slow);
+}
+
+/* Animated Neumorphism */
+.neumorphism-animated {
+  background: var(--primary-bg);
+  border-radius: var(--radius-md);
+  animation: neumorph-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neumorph-pulse {
+
+  0%,
+  100% {
+    box-shadow:
+      8px 8px 16px var(--shadow-dark),
+      -8px -8px 16px var(--shadow-light);
+  }
+
+  50% {
+    box-shadow:
+      12px 12px 24px var(--shadow-dark),
+      -12px -12px 24px var(--shadow-light);
+  }
+}
+
+/* Utility Classes */
+.neumorph-soft {
+  box-shadow:
+    4px 4px 8px var(--shadow-dark),
+    -4px -4px 8px var(--shadow-light);
+}
+
+.neumorph-medium {
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.neumorph-strong {
+  box-shadow:
+    12px 12px 24px var(--shadow-dark),
+    -12px -12px 24px var(--shadow-light);
+}
+
+.neumorph-inset-soft {
+  box-shadow:
+    inset 2px 2px 4px var(--shadow-inset-dark),
+    inset -2px -2px 4px var(--shadow-inset-light);
+}
+
+.neumorph-inset-medium {
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+}
+
+.neumorph-inset-strong {
+  box-shadow:
+    inset 6px 6px 12px var(--shadow-inset-dark),
+    inset -6px -6px 12px var(--shadow-inset-light);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: #2c3e50;
+    --secondary-bg: #34495e;
+    --surface-bg: #2c3e50;
+    --text-primary: #ecf0f1;
+    --text-secondary: #bdc3c7;
+    --text-muted: #95a5a6;
+    --shadow-light: #3d5a7a;
+    --shadow-dark: #1a252f;
+    --shadow-inset-light: #3d5a7a;
+    --shadow-inset-dark: #1a252f;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+
+  .neumorphism,
+  .neumorphism-card,
+  .neumorphism-button {
+    border: 2px solid var(--accent-color);
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+
+  .neumorphism,
+  .neumorphism-card,
+  .neumorphism-button,
+  .neumorphism-floating,
+  .neumorphism-animated {
+    transition: none;
+    animation: none;
+  }
+}

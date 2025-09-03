@@ -1,0 +1,81 @@
+/* CRITICAL VISIBILITY FIXES - Load this last to override all animations */
+
+/* Force all content to be visible */
+* {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Specific section fixes */
+.about-content,
+.skills-grid,
+.skill-item,
+.timeline-item,
+.timeline-content,
+.projects-grid,
+.project-card,
+.contact-content,
+.contact-info,
+.contact-form,
+.education-grid,
+.education-item {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Grid containers need grid display */
+.skills-grid,
+.projects-grid,
+.education-grid,
+.contact-content {
+  display: grid !important;
+}
+
+/* Flex containers need flex display */
+.project-header,
+.project-tech,
+.project-links,
+.social-links,
+.contact-item {
+  display: flex !important;
+}
+
+/* Remove all animation delays and transitions that hide content */
+.fade-in,
+.slide-up,
+.slide-left,
+.slide-right,
+.animate-on-scroll {
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Ensure text elements are visible */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+li,
+a {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: inherit !important;
+}
+
+/* Make sure sections have proper backgrounds */
+section {
+  background: var(--primary-bg) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
