@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages - Admin Panel</title>
+  <link rel="stylesheet" href="css/admin-style.css">
+  <link rel="stylesheet" href="css/admin-neumorphism.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar neumorphism">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h2>Admin Panel</h2>
+        <p>MD Razib Portfolio</p>
+      </div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="profile.html" class="nav-link">
+              <i class="fas fa-user"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="skills.html" class="nav-link">
+              <i class="fas fa-code"></i>
+              <span>Skills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html" class="nav-link">
+              <i class="fas fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">
+              <i class="fas fa-folder"></i>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link active">
+              <i class="fas fa-envelope"></i>
+              <span>Messages</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section">
+          <h3 class="nav-section-title">Settings</h3>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <i class="fas fa-cog"></i>
+                <span>Site Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar neumorphism">
+        <div class="page-title">
+          <h1>Contact Messages</h1>
+          <p>View messages from your portfolio contact form</p>
+        </div>
+      </div>
+
+      <div class="card neumorphism">
+        <div class="card-header">
+          <h3 class="card-title">All Messages</h3>
+        </div>
+        <div id="messagesList">
+          <div class="empty-state">
+            <i class="fas fa-envelope-open"></i>
+            <h3>No Messages Yet</h3>
+            <p>Messages from your contact form will appear here</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script>
+    // Simple messages display
+    document.addEventListener('DOMContentLoaded', function () {
+      const messages = JSON.parse(localStorage.getItem('messages')) || [];
+      const messagesList = document.getElementById('messagesList');
+
+      if (messages.length > 0) {
+        let html = '<table class="data-table"><thead><tr>';
+        html += '<th>Name</th><th>Email</th><th>Subject</th><th>Date</th><th>Actions</th>';
+        html += '</tr></thead><tbody>';
+
+        messages.forEach((msg, index) => {
+          html += `
+            <tr>
+              <td><strong>${msg.name}</strong></td>
+              <td>${msg.email}</td>
+              <td>${msg.subject}</td>
+              <td>${new Date(msg.date).toLocaleDateString()}</td>
+              <td class="table-actions">
+                <button class="btn-table btn-edit" onclick="viewMessage(${index})">
+                  <i class="fas fa-eye"></i> View
+                </button>
+                <button class="btn-table btn-delete" onclick="deleteMessage(${index})">
+                  <i class="fas fa-trash"></i> Delete
+                </button>
+              </td>
+            </tr>
+          `;
+        });
+
+        html += '</tbody></table>';
+        messagesList.innerHTML = html;
+      }
+    });
+
+    function viewMessage(index) {
+      const messages = JSON.parse(localStorage.getItem('messages')) || [];
+      const msg = messages[index];
+      alert(`From: ${msg.name}\nEmail: ${msg.email}\nSubject: ${msg.subject}\n\nMessage:\n${msg.message}`);
+    }
+
+    function deleteMessage(index) {
+      if (!confirm('Delete this message?')) return;
+      let messages = JSON.parse(localStorage.getItem('messages')) || [];
+      messages.splice(index, 1);
+      localStorage.setItem('messages', JSON.stringify(messages));
+      location.reload();
+    }
+  </script>
+</body>
+
+</html>
