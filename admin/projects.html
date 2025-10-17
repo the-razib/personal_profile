@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Admin Panel</title>
+  <link rel="stylesheet" href="css/admin-style.css">
+  <link rel="stylesheet" href="css/admin-neumorphism.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar neumorphism">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h2>Admin Panel</h2>
+        <p>MD Razib Portfolio</p>
+      </div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="profile.html" class="nav-link">
+              <i class="fas fa-user"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="skills.html" class="nav-link">
+              <i class="fas fa-code"></i>
+              <span>Skills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html" class="nav-link">
+              <i class="fas fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link active">
+              <i class="fas fa-folder"></i>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link">
+              <i class="fas fa-envelope"></i>
+              <span>Messages</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section">
+          <h3 class="nav-section-title">Settings</h3>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <i class="fas fa-cog"></i>
+                <span>Site Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <div class="top-bar neumorphism">
+        <div class="page-title">
+          <h1>Projects Management</h1>
+          <p>Manage your portfolio projects</p>
+        </div>
+        <div class="top-bar-actions">
+          <div class="user-info neumorphism">
+            <div class="user-avatar">MR</div>
+            <div class="user-details">
+              <h4 id="userName">Admin</h4>
+              <p>Administrator</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alert Message -->
+      <div id="alertMessage" style="display: none;"></div>
+
+      <!-- Content Section -->
+      <div class="content-section">
+        <div class="section-actions">
+          <button class="btn-primary" onclick="openAddProjectModal()">
+            <i class="fas fa-plus"></i>
+            Add New Project
+          </button>
+        </div>
+
+        <!-- Projects List -->
+        <div class="card neumorphism">
+          <div class="card-header">
+            <h3 class="card-title">All Projects</h3>
+          </div>
+          <div id="projectsList"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Add/Edit Project Modal -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Add New Project</h3>
+        <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+      </div>
+      <form id="projectForm">
+        <input type="hidden" id="projectId">
+
+        <div class="form-field">
+          <label class="form-label">Project Title *</label>
+          <input type="text" id="projectTitle" class="form-input" required>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Description *</label>
+          <textarea id="projectDescription" class="form-textarea" required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Image Path</label>
+            <input type="text" id="projectImage" class="form-input" placeholder="assets/images/project.png">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label">Featured Project</label>
+            <select id="projectFeatured" class="form-select">
+              <option value="false">No</option>
+              <option value="true">Yes</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Technologies (comma separated)</label>
+          <input type="text" id="projectTech" class="form-input" placeholder="Flutter, Dart, Firebase">
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">GitHub URL</label>
+          <input type="url" id="projectGithub" class="form-input">
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Play Store URL</label>
+            <input type="url" id="projectPlayStore" class="form-input">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label">App Store URL</label>
+            <input type="url" id="projectAppStore" class="form-input">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Other Link</label>
+          <input type="url" id="projectLink" class="form-input">
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-save"></i>
+            Save Project
+          </button>
+          <button type="button" class="btn-secondary" onclick="closeProjectModal()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+
+</html>

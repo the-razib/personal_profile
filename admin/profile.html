@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Admin Panel</title>
+  <link rel="stylesheet" href="css/admin-style.css">
+  <link rel="stylesheet" href="css/admin-neumorphism.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar (same as dashboard) -->
+    <aside class="sidebar neumorphism">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h2>Admin Panel</h2>
+        <p>MD Razib Portfolio</p>
+      </div>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="profile.html" class="nav-link active">
+              <i class="fas fa-user"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="skills.html" class="nav-link">
+              <i class="fas fa-code"></i>
+              <span>Skills</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html" class="nav-link">
+              <i class="fas fa-briefcase"></i>
+              <span>Experience</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="projects.html" class="nav-link">
+              <i class="fas fa-folder"></i>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="messages.html" class="nav-link">
+              <i class="fas fa-envelope"></i>
+              <span>Messages</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="nav-section">
+          <h3 class="nav-section-title">Settings</h3>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="settings.html" class="nav-link">
+                <i class="fas fa-cog"></i>
+                <span>Site Settings</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar neumorphism">
+        <div class="page-title">
+          <h1>Profile Management</h1>
+          <p>Update your personal and professional information</p>
+        </div>
+      </div>
+
+      <div id="alertMessage" style="display: none;"></div>
+
+      <div class="form-container">
+        <!-- Hero Section -->
+        <div class="card neumorphism" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h3 class="card-title">Hero Section</h3>
+          </div>
+          <form id="heroForm">
+            <div class="form-field">
+              <label class="form-label">Full Name</label>
+              <input type="text" id="fullName" class="form-input" value="MD Razib">
+            </div>
+            <div class="form-field">
+              <label class="form-label">Job Title</label>
+              <input type="text" id="jobTitle" class="form-input" value="Flutter Developer">
+            </div>
+            <div class="form-field">
+              <label class="form-label">Hero Description</label>
+              <textarea id="heroDescription"
+                class="form-textarea">Passionate Flutter developer with expertise in cross-platform mobile app development. I create beautiful, functional apps with clean code and smooth user experiences.</textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-save"></i> Save Changes
+            </button>
+          </form>
+        </div>
+
+        <!-- About Section -->
+        <div class="card neumorphism" style="margin-bottom: 2rem;">
+          <div class="card-header">
+            <h3 class="card-title">About Section</h3>
+          </div>
+          <form id="aboutForm">
+            <div class="form-field">
+              <label class="form-label">About Introduction</label>
+              <textarea id="aboutIntro"
+                class="form-textarea">Flutter developer with published apps on Google Play and App Store. Skilled in Flutter, Dart, Firebase, RESTful APIs, and state management with GetX.</textarea>
+            </div>
+            <div class="form-field">
+              <label class="form-label">Professional Journey</label>
+              <textarea id="professionalJourney"
+                class="form-textarea">Currently working at Softvence Agency in Mohakhali, Dhaka, I've contributed to 5+ cross-platform mobile apps using Flutter & Dart.</textarea>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-save"></i> Save Changes
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="card neumorphism">
+          <div class="card-header">
+            <h3 class="card-title">Contact Information</h3>
+          </div>
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label">Email</label>
+                <input type="email" id="email" class="form-input" value="mdrazib.cse@gmail.com">
+              </div>
+              <div class="form-field">
+                <label class="form-label">Phone</label>
+                <input type="tel" id="phone" class="form-input" value="+8801644-556056">
+              </div>
+            </div>
+            <div class="form-field">
+              <label class="form-label">Location</label>
+              <input type="text" id="location" class="form-input" value="Monipur, Mirpur 2, Dhaka">
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label">GitHub URL</label>
+                <input type="url" id="githubUrl" class="form-input" value="https://github.com/the-razib">
+              </div>
+              <div class="form-field">
+                <label class="form-label">LinkedIn URL</label>
+                <input type="url" id="linkedinUrl" class="form-input" value="https://linkedin.com/in/md-razib">
+              </div>
+            </div>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-save"></i> Save Changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+
+</html>

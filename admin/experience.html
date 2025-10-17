@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience - Admin Panel</title>
+  <link rel="stylesheet" href="css/admin-style.css">
+  <link rel="stylesheet" href="css/admin-neumorphism.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar neumorphism">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h2>Admin Panel</h2>
+        <p>MD Razib Portfolio</p>
+      </div>
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="dashboard.html" class="nav-link"><i
+                class="fas fa-home"></i><span>Dashboard</span></a></li>
+          <li class="nav-item"><a href="profile.html" class="nav-link"><i
+                class="fas fa-user"></i><span>Profile</span></a></li>
+          <li class="nav-item"><a href="skills.html" class="nav-link"><i class="fas fa-code"></i><span>Skills</span></a>
+          </li>
+          <li class="nav-item"><a href="experience.html" class="nav-link active"><i
+                class="fas fa-briefcase"></i><span>Experience</span></a></li>
+          <li class="nav-item"><a href="projects.html" class="nav-link"><i
+                class="fas fa-folder"></i><span>Projects</span></a></li>
+          <li class="nav-item"><a href="messages.html" class="nav-link"><i
+                class="fas fa-envelope"></i><span>Messages</span></a></li>
+        </ul>
+        <div class="nav-section">
+          <h3 class="nav-section-title">Settings</h3>
+          <ul class="nav-menu">
+            <li class="nav-item"><a href="settings.html" class="nav-link"><i class="fas fa-cog"></i><span>Site
+                  Settings</span></a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="logout()"><i
+                  class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar neumorphism">
+        <div class="page-title">
+          <h1>Experience & Education</h1>
+          <p>Manage your work experience and educational background</p>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="card neumorphism" style="margin-bottom: 2rem;">
+        <div class="card-header">
+          <h3 class="card-title">Work Experience</h3>
+          <button class="btn-small"><i class="fas fa-plus"></i> Add New</button>
+        </div>
+        <div class="card neumorphism-flat" style="padding: 1.5rem; margin-top: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+            <div>
+              <h4 style="color: var(--text-primary); margin-bottom: 0.25rem;">Flutter Developer</h4>
+              <p style="color: var(--accent-color); margin-bottom: 0.5rem;">Softvence Agency | Mohakhali, Dhaka</p>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">April 2025 - Present</p>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
+              <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+            </div>
+          </div>
+          <ul style="color: var(--text-secondary); font-size: 0.9rem; margin-left: 1.5rem;">
+            <li>Contributed to 5+ cross-platform mobile apps using Flutter & Dart</li>
+            <li>1 app published on Google Play & Apple App Store</li>
+            <li>Integrated RESTful APIs for seamless data communication</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="card neumorphism">
+        <div class="card-header">
+          <h3 class="card-title">Education</h3>
+          <button class="btn-small"><i class="fas fa-plus"></i> Add New</button>
+        </div>
+        <div class="content-grid" style="margin-top: 1rem;">
+          <div class="card neumorphism-flat" style="padding: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <h4 style="color: var(--text-primary);">BSc. Computer Science</h4>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
+                <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Daffodil International University</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">2020 - April 2024</p>
+            <p style="color: var(--accent-color); font-weight: 600; margin-top: 0.5rem;">CGPA: 3.82 / 4.0</p>
+          </div>
+
+          <div class="card neumorphism-flat" style="padding: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <h4 style="color: var(--text-primary);">HSC (Science)</h4>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
+                <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Qadirabad Cantonment Sapper College</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">2016 - 2018</p>
+            <p style="color: var(--accent-color); font-weight: 600; margin-top: 0.5rem;">GPA: 4.67 / 5.0</p>
+          </div>
+
+          <div class="card neumorphism-flat" style="padding: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+              <h4 style="color: var(--text-primary);">SSC (Science)</h4>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
+                <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+              </div>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">PDB High School, Bheramara, Kushtia</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">2014 - 2016</p>
+            <p style="color: var(--accent-color); font-weight: 600; margin-top: 0.5rem;">GPA: 4.83 / 5.0</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+
+</html>

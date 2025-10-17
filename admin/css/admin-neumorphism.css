@@ -1,0 +1,85 @@
+/* ====================================
+   ADMIN NEUMORPHISM DESIGN SYSTEM
+   ==================================== */
+
+:root {
+  /* Neumorphism Colors - Matching main site */
+  --primary-bg: #e6f2ff;
+  --secondary-bg: #f0f7ff;
+  --surface-bg: #ebf4ff;
+  --accent-color: #4a90e2;
+  --accent-light: #66a3ff;
+  --accent-dark: #3d7bc6;
+
+  /* Text Colors */
+  --text-primary: #2c3e50;
+  --text-secondary: #5a6c7d;
+  --text-muted: #8fa0b3;
+  --text-light: #ffffff;
+
+  /* Status Colors */
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --info-color: #2196f3;
+
+  /* Shadows */
+  --shadow-light: #ffffff;
+  --shadow-dark: #c8d9f0;
+  --shadow-inset-light: #ffffff;
+  --shadow-inset-dark: #d1e0f0;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(135deg, #4a90e2 0%, #3d7bc6 100%);
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+  --radius-xl: 25px;
+  --radius-round: 50%;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+}
+
+/* Base Neumorphism Effects */
+.neumorphism {
+  background: var(--primary-bg);
+  border-radius: var(--radius-md);
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+  transition: all var(--transition-medium);
+}
+
+.neumorphism:hover {
+  box-shadow:
+    12px 12px 24px var(--shadow-dark),
+    -12px -12px 24px var(--shadow-light);
+}
+
+.neumorphism-inset {
+  background: var(--primary-bg);
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-inset-dark),
+    inset -4px -4px 8px var(--shadow-inset-light);
+}
+
+.neumorphism-flat {
+  background: var(--primary-bg);
+  border-radius: var(--radius-md);
+  box-shadow:
+    4px 4px 8px var(--shadow-dark),
+    -4px -4px 8px var(--shadow-light);
+}
