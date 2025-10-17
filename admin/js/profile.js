@@ -27,6 +27,18 @@ function loadProfileData() {
   const profile = JSON.parse(localStorage.getItem('profileData')) || getDefaultProfile();
 
   // Hero section
+  if (document.getElementById('profilePhoto')) {
+    document.getElementById('profilePhoto').value = profile.hero.photo || 'assets/images/profile.png';
+    document.getElementById('profilePhotoPreview').src = profile.hero.photo ? (profile.hero.photo.startsWith('http') ? profile.hero.photo : '../' + profile.hero.photo) : '../assets/images/profile.png';
+
+    // Update photo preview on input change
+    document.getElementById('profilePhoto').addEventListener('input', function (e) {
+      const photoPath = e.target.value;
+      if (photoPath) {
+        document.getElementById('profilePhotoPreview').src = photoPath.startsWith('http') ? photoPath : '../' + photoPath;
+      }
+    });
+  }
   document.getElementById('fullName').value = profile.hero.name;
   document.getElementById('jobTitle').value = profile.hero.title;
   document.getElementById('heroDescription').value = profile.hero.description;
@@ -48,6 +60,7 @@ function saveHeroData() {
   const profile = JSON.parse(localStorage.getItem('profileData')) || getDefaultProfile();
 
   profile.hero = {
+    photo: document.getElementById('profilePhoto') ? document.getElementById('profilePhoto').value : 'assets/images/profile.png',
     name: document.getElementById('fullName').value,
     title: document.getElementById('jobTitle').value,
     description: document.getElementById('heroDescription').value
@@ -90,6 +103,7 @@ function saveContactData() {
 function getDefaultProfile() {
   return {
     hero: {
+      photo: 'assets/images/profile.png',
       name: 'MD Razib',
       title: 'Flutter Developer',
       description: 'Passionate Flutter developer with expertise in cross-platform mobile app development.'
