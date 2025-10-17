@@ -65,7 +65,7 @@
         <div class="card neumorphism">
           <div class="card-header">
             <h3 class="card-title">Mobile Development</h3>
-            <button class="btn-small"><i class="fas fa-edit"></i> Edit</button>
+            <button class="btn-small" onclick="openAddCategoryModal()"><i class="fas fa-edit"></i> Edit</button>
           </div>
           <ul style="list-style: none; padding: 0;">
             <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Flutter & Dart</li>
@@ -78,7 +78,7 @@
         <div class="card neumorphism">
           <div class="card-header">
             <h3 class="card-title">Backend & APIs</h3>
-            <button class="btn-small"><i class="fas fa-edit"></i> Edit</button>
+            <button class="btn-small" onclick="openAddCategoryModal()"><i class="fas fa-edit"></i> Edit</button>
           </div>
           <ul style="list-style: none; padding: 0;">
             <li style="padding: 0.5rem 0; color: var(--text-secondary);">• RESTful APIs</li>
@@ -91,7 +91,7 @@
         <div class="card neumorphism">
           <div class="card-header">
             <h3 class="card-title">Storage & Database</h3>
-            <button class="btn-small"><i class="fas fa-edit"></i> Edit</button>
+            <button class="btn-small" onclick="openAddCategoryModal()"><i class="fas fa-edit"></i> Edit</button>
           </div>
           <ul style="list-style: none; padding: 0;">
             <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Firestore</li>
@@ -104,7 +104,7 @@
         <div class="card neumorphism">
           <div class="card-header">
             <h3 class="card-title">Tools & Services</h3>
-            <button class="btn-small"><i class="fas fa-edit"></i> Edit</button>
+            <button class="btn-small" onclick="openAddCategoryModal()"><i class="fas fa-edit"></i> Edit</button>
           </div>
           <ul style="list-style: none; padding: 0;">
             <li style="padding: 0.5rem 0; color: var(--text-secondary);">• Git & GitHub</li>
@@ -116,12 +116,60 @@
       </div>
 
       <div style="margin-top: 2rem;">
-        <button class="btn-primary"><i class="fas fa-plus"></i> Add New Category</button>
+        <button class="btn-primary" onclick="openAddCategoryModal()"><i class="fas fa-plus"></i> Add New
+          Category</button>
       </div>
     </main>
   </div>
 
+  <!-- Add/Edit Category Modal -->
+  <div id="categoryModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Add New Category</h3>
+        <button class="modal-close" onclick="closeCategoryModal()">&times;</button>
+      </div>
+      <form id="categoryForm">
+        <div class="form-field">
+          <label class="form-label">Category Name *</label>
+          <input type="text" id="categoryName" class="form-input" required placeholder="e.g., Mobile Development">
+        </div>
+
+        <div class="form-field">
+          <label class="form-label">Skills (one per line)</label>
+          <textarea id="categorySkills" class="form-textarea" rows="6"
+            placeholder="Flutter & Dart&#10;Cross-platform Development&#10;Native Android"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-save"></i> Save Category
+          </button>
+          <button type="button" class="btn-secondary" onclick="closeCategoryModal()">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script src="js/auth.js"></script>
+  <script>
+    function openAddCategoryModal() {
+      document.getElementById('categoryModal').classList.add('active');
+    }
+
+    function closeCategoryModal() {
+      document.getElementById('categoryModal').classList.remove('active');
+      document.getElementById('categoryForm').reset();
+    }
+
+    document.getElementById('categoryForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Category saved successfully!');
+      closeCategoryModal();
+    });
+  </script>
 </body>
 
 </html>

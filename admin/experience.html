@@ -60,7 +60,7 @@
       <div class="card neumorphism" style="margin-bottom: 2rem;">
         <div class="card-header">
           <h3 class="card-title">Work Experience</h3>
-          <button class="btn-small"><i class="fas fa-plus"></i> Add New</button>
+          <button class="btn-small" onclick="openExperienceModal()"><i class="fas fa-plus"></i> Add New</button>
         </div>
         <div class="card neumorphism-flat" style="padding: 1.5rem; margin-top: 1rem;">
           <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
@@ -70,8 +70,9 @@
               <p style="color: var(--text-muted); font-size: 0.9rem;">April 2025 - Present</p>
             </div>
             <div style="display: flex; gap: 0.5rem;">
-              <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
-              <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+              <button class="btn-table btn-edit" onclick="openExperienceModal()"><i class="fas fa-edit"></i></button>
+              <button class="btn-table btn-delete" onclick="alert('Delete functionality will be implemented')"><i
+                  class="fas fa-trash"></i></button>
             </div>
           </div>
           <ul style="color: var(--text-secondary); font-size: 0.9rem; margin-left: 1.5rem;">
@@ -86,15 +87,16 @@
       <div class="card neumorphism">
         <div class="card-header">
           <h3 class="card-title">Education</h3>
-          <button class="btn-small"><i class="fas fa-plus"></i> Add New</button>
+          <button class="btn-small" onclick="openEducationModal()"><i class="fas fa-plus"></i> Add New</button>
         </div>
         <div class="content-grid" style="margin-top: 1rem;">
           <div class="card neumorphism-flat" style="padding: 1.5rem;">
             <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
               <h4 style="color: var(--text-primary);">BSc. Computer Science</h4>
               <div style="display: flex; gap: 0.5rem;">
-                <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
-                <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+                <button class="btn-table btn-edit" onclick="openEducationModal()"><i class="fas fa-edit"></i></button>
+                <button class="btn-table btn-delete" onclick="alert('Delete functionality will be implemented')"><i
+                    class="fas fa-trash"></i></button>
               </div>
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Daffodil International University</p>
@@ -106,8 +108,9 @@
             <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
               <h4 style="color: var(--text-primary);">HSC (Science)</h4>
               <div style="display: flex; gap: 0.5rem;">
-                <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
-                <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+                <button class="btn-table btn-edit" onclick="openEducationModal()"><i class="fas fa-edit"></i></button>
+                <button class="btn-table btn-delete" onclick="alert('Delete functionality will be implemented')"><i
+                    class="fas fa-trash"></i></button>
               </div>
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">Qadirabad Cantonment Sapper College</p>
@@ -119,20 +122,132 @@
             <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
               <h4 style="color: var(--text-primary);">SSC (Science)</h4>
               <div style="display: flex; gap: 0.5rem;">
-                <button class="btn-table btn-edit"><i class="fas fa-edit"></i></button>
-                <button class="btn-table btn-delete"><i class="fas fa-trash"></i></button>
+                <button class="btn-table btn-edit" onclick="openEducationModal()"><i class="fas fa-edit"></i></button>
+                <button class="btn-table btn-delete" onclick="alert('Delete functionality will be implemented')"><i
+                    class="fas fa-trash"></i></button>
               </div>
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 0.5rem;">PDB High School, Bheramara, Kushtia</p>
             <p style="color: var(--text-muted); font-size: 0.9rem;">2014 - 2016</p>
-            <p style="color: var(--accent-color); font-weight: 600; margin-top: 0.5rem;">GPA: 4.83 / 5.0</p>
+            <p style="color: var(--text-muted); font-weight: 600; margin-top: 0.5rem;">GPA: 4.83 / 5.0</p>
           </div>
         </div>
       </div>
     </main>
   </div>
 
+  <!-- Add/Edit Experience Modal -->
+  <div id="experienceModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Work Experience</h3>
+        <button class="modal-close" onclick="closeExperienceModal()">&times;</button>
+      </div>
+      <form id="experienceForm">
+        <div class="form-field">
+          <label class="form-label">Job Title *</label>
+          <input type="text" class="form-input" required placeholder="e.g., Flutter Developer">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Company *</label>
+          <input type="text" class="form-input" required placeholder="e.g., Softvence Agency">
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Start Date *</label>
+            <input type="text" class="form-input" required placeholder="e.g., April 2025">
+          </div>
+          <div class="form-field">
+            <label class="form-label">End Date</label>
+            <input type="text" class="form-input" placeholder="Present or Month Year">
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Responsibilities (one per line)</label>
+          <textarea class="form-textarea" rows="5" placeholder="Enter each responsibility on a new line"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-save"></i> Save Experience
+          </button>
+          <button type="button" class="btn-secondary" onclick="closeExperienceModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add/Edit Education Modal -->
+  <div id="educationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Add Education</h3>
+        <button class="modal-close" onclick="closeEducationModal()">&times;</button>
+      </div>
+      <form id="educationForm">
+        <div class="form-field">
+          <label class="form-label">Degree/Certificate *</label>
+          <input type="text" class="form-input" required placeholder="e.g., BSc. Computer Science">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Institution *</label>
+          <input type="text" class="form-input" required placeholder="e.g., Daffodil International University">
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label class="form-label">Start Year *</label>
+            <input type="text" class="form-input" required placeholder="e.g., 2020">
+          </div>
+          <div class="form-field">
+            <label class="form-label">End Year *</label>
+            <input type="text" class="form-input" required placeholder="e.g., 2024">
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-label">GPA/CGPA</label>
+          <input type="text" class="form-input" placeholder="e.g., 3.82 / 4.0">
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-save"></i> Save Education
+          </button>
+          <button type="button" class="btn-secondary" onclick="closeEducationModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script src="js/auth.js"></script>
+  <script>
+    function openExperienceModal() {
+      document.getElementById('experienceModal').classList.add('active');
+    }
+
+    function closeExperienceModal() {
+      document.getElementById('experienceModal').classList.remove('active');
+      document.getElementById('experienceForm').reset();
+    }
+
+    function openEducationModal() {
+      document.getElementById('educationModal').classList.add('active');
+    }
+
+    function closeEducationModal() {
+      document.getElementById('educationModal').classList.remove('active');
+      document.getElementById('educationForm').reset();
+    }
+
+    document.getElementById('experienceForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Work experience saved successfully!');
+      closeExperienceModal();
+    });
+
+    document.getElementById('educationForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Education saved successfully!');
+      closeEducationModal();
+    });
+  </script>
 </body>
 
 </html>
