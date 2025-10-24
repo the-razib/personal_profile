@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   initTypingEffect();
   initSmoothScrolling();
   initParallaxEffect();
+  loadCVLink();
 
   console.log('Portfolio loaded successfully!');
 });
@@ -475,6 +476,19 @@ function preloadImages() {
 
 // Initialize image preloading
 setTimeout(preloadImages, 2000);
+
+// ====================================
+// CV DOWNLOAD LINK
+// ====================================
+function loadCVLink() {
+  const cvBtn = document.getElementById('cvDownloadBtn');
+  if (!cvBtn) return;
+
+  // Load CV link from localStorage or use default
+  const cvLink = localStorage.getItem('cvLink') || 'https://cdn.jsdelivr.net/gh/the-razib/personal_profile/cv/Md-Razib-CV-16-09-25.pdf';
+  cvBtn.href = cvLink;
+}
+
 // ====================================
 // IMAGE MODAL FUNCTIONALITY
 // ====================================
